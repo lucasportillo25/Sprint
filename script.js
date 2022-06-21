@@ -131,37 +131,6 @@ function liqui(){
             `;
         })
 }
-/* Dolar Promedio */
-function dolarPromedio(){
-    fetch(url)
-        .then(response=>response.json())
-        .then(data => {
-            promedio.innerHTML = `
-            <div class"d-flex flex-column justify-content-center align-items-center p-0 m-0">
-                <div class="precioCss d-flex justify-content-evenly m-0">
-                    <div class="m-0 p-0">
-                        <p><b>$ ${data['7'].casa.compra}</b></p>
-                    </div>
-                    <div class="m-0 p-0">
-                        <p><b>$ ${data['7'].casa.venta}</b></p>
-                    </div>
-                </div>
-            
-                <div class="variaCss d-flex justify-content-center align-items-center m-0">
-                    <div>
-                        <p>VARIACIÓN: +${data['0'].casa.variacion}%</p>
-                    </div>
-                </div>
-                
-                <div class="fechaCss d-flex justify-content-center align-item-end m-0">
-                    <div>
-                        <p>ACTUALIZADO: ${date} HORA:  ${time}</p>
-                    </div>
-                </div>
-            </div>
-            `;
-        })
-}
 /* Dolar Bolsa */
 function dolarBolsa(){ 
     fetch(url)
@@ -190,7 +159,7 @@ function dolarBolsa(){
             `;
         })
 }
-/* Dolar Turista */
+       /* Dolar Turista */
 function dolarTurista(){
     fetch("https://www.dolarsi.com/api/api.php?type=valoresprincipales")
         .then(response=>response.json())
@@ -218,85 +187,3 @@ function dolarTurista(){
             `;
         })
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        /* Dolar Turista */
-function dolarTurista(){
-    fetch("https://www.dolarsi.com/api/api.php?type=valoresprincipales")
-        .then(response=>response.json())
-        .then(data => {
-            turista.innerHTML = `
-            <div class"d-flex flex-column justify-content-center align-items-center p-0 m-0">
-                <div class="precioCss d-flex justify-content-evenly m-0">
-                    <div class="m-0 p-0">
-                        <p><b>$ ${data['6'].casa.venta}</b></p>
-                    </div>
-                </div>
-            
-                <div class="variaCss d-flex justify-content-center align-items-center m-0">
-                    <div>
-                        <p>VARIACIÓN: +${data['6'].casa.variacion}%</p>
-                    </div>
-                </div>
-                
-                <div class="fechaCss d-flex justify-content-center align-item-end m-0">
-                    <div>
-                        <p>ACTUALIZADO: ${date}  HORA: ${time}</p>
-                    </div>
-                </div>
-            </div>
-            `;
-        })
-}
-
