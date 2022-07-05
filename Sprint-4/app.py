@@ -1,4 +1,4 @@
-#defino librerias a utilixar
+#Defino librerias a utilixar
 import csv
 from distutils.file_util import write_file
 
@@ -42,7 +42,7 @@ if __name__=="__main__":
         readFile()
         printAmigos(amigo)
     elif op == "2":
-        grabarAmigo()
+        grabarAmigos()
     else:
         print("Gracias por utilizar la agenda")
 
