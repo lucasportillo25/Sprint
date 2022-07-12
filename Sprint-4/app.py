@@ -15,6 +15,7 @@ def readFile():
                 data = {"nombre":row[0], "Apellido":row[1], "Teléfono": row[2], "Cumpleaños": row[3]}
                 #amigos.append(data)
     file.close()
+    return cheques
 
 def grabarAmigos():
     nombre = input("Ingrese nombre: ")
