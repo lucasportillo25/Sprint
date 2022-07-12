@@ -2,10 +2,10 @@
 import csv
 from distutils.file_util import write_file
 
-#defino constantes y variables
+#Defino constantes y variables
 amigos = []
 
-#defino funciones
+#Defino funciones
 def readFile():
     file = open("phonebook.csv", "r")
     csvfile = csv.reader(file)
@@ -16,7 +16,6 @@ def readFile():
                 #amigos.append(data)
     file.close()
 
-
 def grabarAmigos():
     nombre = input("Ingrese nombre: ")
     apellido = input("Ingrese apellido: ")
@@ -26,24 +25,44 @@ def grabarAmigos():
     amigos.append(data)
     writeFile(amigos)
 
-
 def printAmigos(amigos):
     for amigo in amigos:
         csvfile.writerow(amigo['Nombre'], amigo ['Apellido'],amigo['Telefono'], amigo['Cumpleaños'] )
     file.close()
-#defino el método principal
-if __name__=="__main__":
-    print("Bienvenido a la agenda telefonica")
-    print("-----Elija la opcion-----")
-    print("1. Imprimir amigos")
-    print("2. Agregar amigo")
-    op = input("Ingrese opcion: ")
-    if op == "1":
-        readFile()
-        printAmigos(amigo)
-    elif op == "2":
-        grabarAmigos()
-    else:
-        print("Gracias por utilizar la agenda")
 
+def BuscarPorDni(dni, tipo):
+    busqueda = []
+    cantidad = 0
+    cheques = readFile()
+
+def grabarCSV(dni, busqueda):
+    file = open(dni + "_" + str.(datatime)+".csv","w")
+    csvfile = csv.writer(file)
+    for row in busqueda:
+        csvfile.writerow(
+            [row["NumeroCuentaOrigen"], row["Valor"], row["FechaOrigen"], row["FechaPago"]])
+    file.close()
+    print("Se grabo el archivo CSV")  
+
+#Defino el método principal
+if __name__=="__main__":
+    while runtime:
+        print(opciones)
+        op = input()
+        if op == "1":
+            urlfile = input("Ingrese el nombre del archivo que contiene los cheques: \n")
+            dni = input("Ingrese el DNI del usuario a consultar: \n")
+            tipo = input("Seleccione el tipo de cheque a buscar EMITIDO o DEPOSITADO: \n")
+            salida = input("Elija si desea recibir la salida por PANTALLA o CSV: \n")
+            try:
+                resultado = buscarPorDni(dni, tipo)
+                if salida == "PANTALLA":
+                    print(resultado)
+                elif salida == "CSV":
+                    grabarCSV(resultado)
+            except:
+                print("Ingreso un dato erroneo")
+            continue
+        else:
+            runtime = False
     
