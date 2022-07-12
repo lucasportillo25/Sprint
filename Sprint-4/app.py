@@ -33,14 +33,17 @@ def printAmigos(amigos):
 def BuscarPorDni(dni, tipo):
     busqueda = []
     cantidad = 0
-    cheques = readFile()
+    cheques = readFile(urlfile)
+    for cheque in cheques:
+        if cheque["DNI"] == dni and cheque["TIPO"] == tipo:
+            cantidad += 1
+            busqueda.append(cheque)
 
 def grabarCSV(dni, busqueda):
     file = open(dni + "_" + str.(datatime)+".csv","w")
     csvfile = csv.writer(file)
     for row in busqueda:
-        csvfile.writerow(
-            [row["NumeroCuentaOrigen"], row["Valor"], row["FechaOrigen"], row["FechaPago"]])
+        csvfile.writerow([row["NumeroCuentaOrigen"], row["Valor"], row["FechaOrigen"], row["FechaPago"]])
     file.close()
     print("Se grabo el archivo CSV")  
 
@@ -65,4 +68,5 @@ if __name__=="__main__":
             continue
         else:
             runtime = False
+    
     
